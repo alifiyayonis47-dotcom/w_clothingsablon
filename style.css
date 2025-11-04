@@ -44,6 +44,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -59,7 +60,7 @@ header{
 }
 
 .logo-text {
-    font-family: 'playfair Display', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 28px;
     font-weight: 900;
     color: var(--coffe-medium);
@@ -138,37 +139,6 @@ nav a:hover:after {
     background: rgba(111, 78, 55, 0.05);
     transform: translateY(-3px);
 }
-
-.button-brown {
-  display: inline-block;
-  background-color: #6E4B3B; /* Warna coklat */
-  color: #ffffff; /* Warna teks putih */
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 20px; /* Membuat bentuk oval */
-  text-align: center;
-  line-height: 1.4;
-  border: none;
-  transition: all 0.3s ease;
-  max-width: 200px; /* agar teks bisa turun ke baris berikut kalau panjang */
-  word-wrap: break-word;
-}
-
-/* Efek hover */
-.button-brown:hover {
-  background-color: #5c3f30; /* Warna sedikit lebih gelap saat di-hover */
-}
-
-.button-brown::target-text {
-     font-family: 'playfair Display', serif;
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--text-light);
-    letter-spacing: 1px;
-}
-
 
 /* hero section */
 .hero {
@@ -316,11 +286,11 @@ nav a:hover:after {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transfrom 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .product-card:hover .product-img img {
-    transform: scale(1.0s);
+    transform: scale(1.05);
 }
 
 .product-info {
@@ -439,3 +409,71 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* =====================================
+   RESPONSIVE (HP & TABLET)
+===================================== */
+@media (max-width: 992px) {
+    .hero-content {
+        width: 100%;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .hero-text {
+        margin-bottom: 60px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {}
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background: #1f1d1d;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 120px 0 60px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .product-img {
+        height: 320px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    footer {
+        text-align: center;
+    }
